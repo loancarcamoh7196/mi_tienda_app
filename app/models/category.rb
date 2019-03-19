@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
 
   # Paginación de tabla
-  paginates_per 5
+  paginates_per 15  
 end
