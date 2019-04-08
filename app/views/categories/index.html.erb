@@ -1,32 +1,42 @@
 <div class="container">
-  <h1>Categorias</h1>
+  
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-12">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title">Categorias</p>
+          </article>
+          <div class="tile is-child is-vertical">
+            <%= link_to 'Nueva Categoría', new_category_path, class: 'button is-success is-outline is-pulled-right' %>
+          </div>
+          <div class="tile is-child ">
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
 
-  <%= link_to 'Nueva Categoría', new_category_path %>
-  <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+              <tbody>
+                <%= render @categories %>
+              </tbody>
+            </table>
 
-    <tbody>
-      <% @categories.each do |category| %>
-        <tr>
-          <td><%= category.name %></td>
-          <td><%= category.description %></td>
-          <td><%= link_to 'Show', category %></td>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+            <div>
+              <%= paginate(@categories) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div>
-     <%= paginate(@categories) %>
+    
   </div>
+
+  
 
 
 </div>
