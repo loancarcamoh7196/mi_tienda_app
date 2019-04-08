@@ -1,15 +1,22 @@
 <div class="container">
   
   <div class="tile is-ancestor">
+
     <div class="tile is-vertical is-12">
       <div class="tile">
+
         <div class="tile is-parent is-vertical">
+          <%# Titulo de la página %>
           <article class="tile is-child notification is-primary">
             <p class="title">Categorias</p>
           </article>
+        
+          <%# Boton New %>
           <div class="tile is-child is-vertical">
-            <%= link_to 'Nueva Categoría', new_category_path, class: 'button is-success is-outline is-pulled-right' %>
+            <%= link_to "#{icon('fas', 'plus')}Nueva Categoría".html_safe, new_category_path, class: 'button is-success is-outlined is-pulled-right ' %>
           </div>
+
+          <%# Desglose de Tabla %>
           <div class="tile is-child ">
             <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
               <thead>
@@ -20,7 +27,7 @@
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody id="lista">
                 <%= render @categories %>
               </tbody>
             </table>

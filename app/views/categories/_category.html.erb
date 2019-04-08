@@ -1,7 +1,7 @@
 <tr id="<%= category.id %>">
   <td><%= category.name %></td>
   <td><%= category.description %></td>
-  <td><%= link_to 'Show', category %></td>
-  <td><%= link_to 'Edit', edit_category_path(category) %></td>
-  <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to " #{icon('fas','info-circle')}".html_safe, category, class: 'button is-info is-outlined', title: "Detalles de registro: #{category.name}" %></td>
+  <td><%= link_to "#{icon('fas','edit')}".html_safe, edit_category_path(category), class: 'button is-warning is-outlined', title: "Editar #{category.name}" %></td>
+  <td><%= link_to "#{icon('fas','trash-alt')}".html_safe, category, method: :delete, class: 'button is-danger is-outlined', title: "¿Eliminar #{category.name}? ", data: { confirm: 'Are you sure?' } %></td>
 </tr>
